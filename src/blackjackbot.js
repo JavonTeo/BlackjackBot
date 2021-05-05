@@ -1,19 +1,15 @@
-let token = "ODIyMzQzOTIwMDU0NDM1ODcw.YFQ5dA.2ccHjmsER92uGuCwDNnh0Bo9pPk";
-const Discord = require('discord.js');     //import the Client module of discord.js
+const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fs = require('fs');
 const fspromises = require('fs').promises;
 const path = require('path');
-// const EventEmitter = require('events');
-// const emitter = new EventEmitter()
-// emitter.setMaxListeners(50)
+
+require('dotenv').config();
 
 const PREFIX = '$';
-// let game_approval = false;
+bot.login(process.env.bjbot_Token);
 
 bot.commandsarchive = new Discord.Collection();
-// C:\Users\Acer user\Desktop\blackjackbot\src\commands
-// src\commands
 const commandFiles =  fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
 
 for (const file of commandFiles) //loading command files into commandsarchive
@@ -54,9 +50,5 @@ bot.on('message', (message) =>
         bot.commandsarchive.get(command).execute(message, args);
     } catch (error) {
         console.error(error);
-        message.channel.send("There was an issue executing that command.");
     }
 });
-
-
-bot.login(token);
