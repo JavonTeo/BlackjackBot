@@ -1,8 +1,12 @@
 # blackjackbot
 A bot created on discord for playing blackjack
-hello world
 
-adjust server ID in drawcards and startbj
+Before starting the game, a few steps have to be taken:
+    1. Check tokens under .env contains:
+        a) serverid
+        b) bottoken
+    2. Adjust serverID and bottoken are correct in drawcards and startbj
+        Line 15 startbj/Line 29 drawcards: "membersArr = clients.gu....get(process.env."XXX").memb...", ensure "XXX" is of the correct server id
 
 planned procedure:
 !startbj
