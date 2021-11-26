@@ -30,3 +30,11 @@ once all cards dealt, bot says "all cards dealt, initiating hit/stand phase"
         - if both same value, no exchange.
 
 order: startbj, choosedealer, placebets, dealcards, hitstand
+
+
+into console:
+    type npm run dev or npm run start
+    main blackjack: !<command>
+
+    ping: "ping"
+    imgs: "fap to <name>"
